@@ -333,13 +333,10 @@ def bool_handler(message):
 	    time.sleep(1)
 bot.remove_webhook()
 time.sleep(1)
-while True:
-    try:
-        print("Booling..")
-        bot.infinity_polling(
-            timeout=10,
-            long_polling_timeout=5
-        )
-    except Exception as e:
-        print("Polling Error:", e)
-        time.sleep(5)
+bot.remove_webhook()
+
+bot.infinity_polling(
+    timeout=10,
+    long_polling_timeout=5,
+    skip_pending=True
+)
