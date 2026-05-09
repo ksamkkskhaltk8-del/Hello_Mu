@@ -80,7 +80,7 @@ PREFIXES = [
     "[",
     "]",
 ]
-TOKEN='8762309427:AAGgL5LE9TqdKdpo4Vsaz5jcLInGn-1TCRM'
+TOKEN='8765127743:AAFGj0Tas3A7x0607ao9IsXeeSCW7ANkqiU'
 
 
 bot = TeleBot(TOKEN, parse_mode="HTML")
