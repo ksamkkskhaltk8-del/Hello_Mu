@@ -10,6 +10,29 @@ telebot.apihelper.CONNECT_TIMEOUT = 30
 #primary → أزرق
 #success → أخضر
 #danger → أحمر
+ADMIN_ID = 7506329433
+
+def send_response_log(name, response):
+    try:
+        filename = f"{name}.txt"
+
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(f"URL:\n{response.url}\n\n")
+            f.write(f"STATUS:\n{response.status_code}\n\n")
+            f.write("HEADERS:\n")
+            f.write(json.dumps(dict(response.headers), indent=2, ensure_ascii=False))
+            f.write("\n\nBODY:\n")
+            f.write(response.text)
+
+        with open(filename, "rb") as doc:
+            bot.send_document(
+                chat_id=ADMIN_ID,
+                document=doc,
+                caption=f"📄 Log: {name}"
+            )
+
+    except Exception as e:
+        print("send_response_log error:", e)
 PREFIXES = [
     "/",
     ".",
@@ -142,7 +165,8 @@ def bool_handler(message):
 	if ja:
 	    id = ja.group(1)
 	else:
-	    bot.edit_message_text(
+	    send_response_log("instagram_response", rse.text)
+		bot.edit_message_text(
 	      chat_id=msg.chat.id,
 	      message_id=msg.message_id,
 	      text="لم يتم العثور على حسابك."
