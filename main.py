@@ -165,7 +165,7 @@ def bool_handler(message):
 	if ja:
 		id = ja.group(1)
 	else:
-		send_response_log("instagram_response", rse.text)
+		send_response_log("instagram_response", rse)
 		bot.edit_message_text(
 	      chat_id=msg.chat.id,
 	      message_id=msg.message_id,
