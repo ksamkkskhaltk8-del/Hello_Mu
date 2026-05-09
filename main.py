@@ -223,7 +223,7 @@ follo.add(types.InlineKeyboardButton(text="➕ متابعة مطور البوت"
 def start_handler(message):
     bot.reply_to(message, "📌 أرسل يوزرك بهذا الشكل:\n\n<code>@username</code>\nتأكد من كون الحساب عام!", reply_markup=follo)
 
-si = '80683688237%3AluP74n6IjS0gUA%3A15%3AAYjGncVepCutJKlhmPu4rNco1eKGyHzRvkzvr0lu8g'
+si = '19284914531%3AO3pVnoFyzEDbhw%3A25%3AAYhAOIRwEikN'
 
 def find(ichi, ni='', san=''):
     if ni in ichi:
