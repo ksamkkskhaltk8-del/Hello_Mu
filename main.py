@@ -331,7 +331,8 @@ def bool_handler(message):
 	        print("ERROR:", e)
 	
 	    time.sleep(1)
-
+bot.remove_webhook()
+time.sleep(1)
 while True:
     try:
         print("Booling..")
